@@ -81,7 +81,13 @@ const config: PlaywrightTestConfig = {
      * Maximum time expect() should wait for the condition to be met.
      * For example in `await expect(locator).toHaveText();`
      */
-    timeout: 5000
+    timeout: 5000,
+    toMatchSnapshot: {
+      comparator: 'pixelmatch',
+    },
+    toHaveScreenshot: {
+      comparator: 'pixelmatch',
+    },
   },
   /* Fail the build on CI if you accidentally left test.only in the source code. */
   forbidOnly: !!process.env.CI,
@@ -114,6 +120,7 @@ const config: PlaywrightTestConfig = {
     port: 3333,
     reuseExistingServer: !process.env.CI
   }
+  // trigger tests //
 };
 
 export default config;
