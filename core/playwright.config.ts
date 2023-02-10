@@ -114,6 +114,7 @@ const config: PlaywrightTestConfig = {
     port: 3333,
     reuseExistingServer: !process.env.CI
   }
+  // trigger tests //
 };
 
 export default config;
